@@ -1,0 +1,119 @@
+# =============================================================================
+# CORE TERMINAL APPEARANCE
+# =============================================================================
+# The theme is manually defined at the bottom, so we don't set 'theme =' here.
+
+# Makes the window title bar completely invisible for a clean look
+macos-titlebar-style = hidden
+
+# Ensures you see the full vibrant color range on Mac displays
+window-colorspace = display-p3
+
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+
+keybind = cmd+alt+i=unbind
+keybind = cmd+alt+w=unbind
+keybind = cmd+alt+h=unbind
+keybind = cmd+alt+q=unbind
+keybind = cmd+alt+m=unbind
+keybind = cmd+q=unbind
+keybind = alt+q=unbind
+keybind = cmd+m=unbind
+keybind = alt+m=unbind
+
+# =============================================================================
+# FONT & TEXT RENDERING
+# =============================================================================
+font-family = "PragmataPro Mono Liga"
+font-size = 13
+
+# Fixes the "Thin" look to match iTerm's heavier rendering
+font-thicken = true
+font-thicken-strength = 127
+
+# Forces bold text to use bright colors (gives the "neon" pop)
+bold-is-bright = true
+
+# Adjusts spacing to be tighter (like iTerm) instead of wide (like standard terminals)
+adjust-cell-width = 0%
+adjust-cell-height = 0%
+
+# Font Features (Ligatures)
+font-feature = calt
+font-feature = liga
+font-feature = dlig
+
+# =============================================================================
+# CURSOR & MOUSE (FIXED)
+# =============================================================================
+cursor-style = block
+cursor-style-blink = true
+cursor-invert-fg-bg = true
+
+# Hides the mouse cursor while you are typing to remove distractions
+mouse-hide-while-typing = true
+
+# Mimics iTerm behavior: Selecting text automatically copies it to clipboard
+copy-on-select = clipboard
+
+# =============================================================================
+# WINDOW LAYOUT & PADDING
+# =============================================================================
+# Adds breathing room around the text edges
+window-padding-x = 0
+window-padding-y = 0
+
+# Ensures text is perfectly centered if the window size isn't a perfect multiple
+window-padding-balance = true
+
+# =============================================================================
+# SHELL INTEGRATION
+# =============================================================================
+shell-integration = detect
+
+# CRITICAL FIX: prevents your shell (zsh/fish) from overriding the block cursor
+shell-integration-features = no-cursor
+
+# =============================================================================
+# MANUAL COLOR PALETTE (VIBRANT / NEON)
+# =============================================================================
+# Ensures distinct contrast between text and background
+minimum-contrast = 1.1
+
+# Background & Foreground
+background = #000000
+foreground = #efefef
+selection-background = #dfdfdf
+selection-foreground = #202020
+cursor-color = #d9d9d9
+
+# Standard Colors (0-7)
+palette = 0=#000000
+palette = 1=#ee799c
+palette = 2=#97fca5
+palette = 3=#ffff86
+palette = 4=#799bf8
+palette = 5=#c275f7
+palette = 6=#97fcfd
+palette = 7=#bfbfbf
+
+# Bright Colors (8-15) - Used for Bold Text
+palette = 8=#4d4d4d
+palette = 9=#eb4672
+palette = 10=#7cfb81
+palette = 11=#ffff60
+palette = 12=#416ff6
+palette = 13=#bf3ff6
+palette = 14=#7cfbfd
+palette = 15=#ffffff
+
+custom-shader-animation = true
+custom-shader = shaders/cursor_sweep.glsl
+custom-shader = shaders/ripple_rectangle_cursor.glsl
+
+# =============================================================================
+# KEY COMBOS
+# =============================================================================
+
+keybind = option+backspace=text:\x1b\x7f

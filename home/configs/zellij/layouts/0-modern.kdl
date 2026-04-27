@@ -1,0 +1,97 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                // ---------------------------------------------------------
+                // LEFT: Green (OS) -> Yellow (Session) -> Bright Red (Mode)
+                // ---------------------------------------------------------
+                // Note: Removed 'bold' from os_icon to ensure "dark black" color
+                format_left   "#[bg=green,fg=black] {command_host_os_icon} #[bg=yellow,fg=black,bold] {session} #[bg=bright_red,fg=bright_white,bold]{mode}"
+
+                // ---------------------------------------------------------
+                // CENTER: Bright Blue Background (Space) -> Tabs
+                // ---------------------------------------------------------
+                format_center "{tabs}"
+                format_space  "#[bg=bright_blue]"
+
+                // ---------------------------------------------------------
+                // RIGHT: Bright Blue (Swap) -> Bright Magenta (Time)
+                // ---------------------------------------------------------
+                format_right  "#[bg=bright_blue,fg=bright_white,bold] {swap_layout} #[bg=bright_magenta,fg=bright_white,bold] {datetime} "
+
+                // ---------------------------------------------------------
+                // MODES: All set to Bright Red as requested
+                // ---------------------------------------------------------
+                mode_normal        "#[bg=bright_red,fg=bright_white,bold] NORMAL "
+                mode_locked        "#[bg=bright_red,fg=bright_white,bold] LOCKED "
+                mode_resize        "#[bg=bright_red,fg=bright_white,bold] RESIZE "
+                mode_pane          "#[bg=bright_red,fg=bright_white,bold] PANE "
+                mode_tab           "#[bg=bright_red,fg=bright_white,bold] TAB "
+                mode_scroll        "#[bg=bright_red,fg=bright_white,bold] SCROLL "
+                mode_enter_search  "#[bg=bright_red,fg=bright_white,bold] ENTER_SEARCH "
+                mode_search        "#[bg=bright_red,fg=bright_white,bold] SEARCH "
+                mode_rename_tab    "#[bg=bright_red,fg=bright_white,bold] RENAME_TAB "
+                mode_rename_pane   "#[bg=bright_red,fg=bright_white,bold] RENAME_PANE "
+                mode_session       "#[bg=bright_red,fg=bright_white,bold] SESSION "
+                mode_move          "#[bg=bright_red,fg=bright_white,bold] MOVE "
+                mode_prompt        "#[bg=bright_red,fg=bright_white,bold] PROMPT "
+                mode_tmux          "#[bg=bright_red,fg=bright_white,bold] TMUX "
+
+                // ---------------------------------------------------------
+                // TABS: Number only ({index}) + Extra Padding
+                // ---------------------------------------------------------
+                // Normal Tab: Bright Blue bg / Bright White text
+                tab_normal "#[bg=bright_blue,fg=bright_white,bold]  {index}  {sync_indicator}{fullscreen_indicator}{floating_indicator}"
+
+                // Active Tab: Black bg / Bright White text
+                tab_active "#[bg=black,fg=bright_white,bold]  {index}  {sync_indicator}{fullscreen_indicator}{floating_indicator}"
+
+                // Indicators
+                tab_sync_indicator       "󰓦 "
+                tab_fullscreen_indicator "󱟱 "
+                tab_floating_indicator   "󰉈 "
+
+                // ---------------------------------------------------------
+                // COMMANDS & DATA
+                // ---------------------------------------------------------
+                command_host_os_icon_command "sh -c \"echo $(uname -s | grep -qi 'darwin' && echo '󰀵')$(uname -s | grep -qi 'linux' && echo '')$(uname -s | grep -qi 'nt' && echo '󰖳')\""
+                command_host_os_icon_format "{stdout}"
+                command_host_os_icon_interval "0"
+                command_host_os_icon_rendermode "static"
+
+                datetime          "{format}"
+                datetime_format   "%d-%m-%Y %H:%M"
+                datetime_timezone "Europe/Berlin"
+            }
+        }
+
+        children
+
+        // ---------------------------------------------------------
+        // BOTTOM BAR (Key hints)
+        // ---------------------------------------------------------
+        // pane size=1 borderless=true {
+        //     plugin location="file:~/.local/share/zellij/plugins/zjstatus.wasm" {
+        //         format_left   ""
+        //         format_center "{mode}"
+        //         format_right  ""
+        //         format_space  "#[bg=green]"
+
+        //         mode_normal        "#[bg=green,fg=black,bold] <Ctrl p> Pane │ <Ctrl t> Tab │ <Ctrl n> Resize │ <Ctrl s> Scroll │ <Ctrl o> Session │ <Ctrl h> Move │ <Ctrl g> Lock │ <Ctrl q> Quit "
+        //         mode_locked        "#[bg=bright_red,fg=black,bold] <Ctrl g> Unlock - All other keys disabled "
+        //         mode_resize        "#[bg=bright_magenta,fg=black,bold] <←/h> Left │ <↓/j> Down │ <↑/k> Up │ <→/l> Right │ <+/=> Increase │ <-/_> Decrease │ <Esc/Enter> Back "
+        //         mode_pane          "#[bg=bright_magenta,fg=black,bold] <←/h> Left │ <↓/j> Down │ <↑/k> Up │ <→/l> Right │ <p> Next │ <n> New │ <x> Close │ <f> Fullscreen │ <z> Frames │ <w> Floating │ <e> Embed │ <r> Rename │ <Esc/Enter> Back "
+        //         mode_tab           "#[bg=bright_magenta,fg=black,bold] <←/h> Previous │ <→/l> Next │ <n> New │ <x> Close │ <r> Rename │ <s> Sync │ <b> Break Pane │ <1-9> Go to Tab │ <Tab> Toggle │ <Esc/Enter> Back "
+        //         mode_scroll        "#[bg=bright_magenta,fg=black,bold] <↓/j> Down │ <↑/k> Up │ <Ctrl f/PgDn> Page Down │ <Ctrl b/PgUp> Page Up │ <d> Half Page Down │ <u> Half Page Up │ <s> Scroll to Bottom │ <e> Edit Scrollback │ </> Search Down │ <?> Search Up │ <Esc/Enter> Back "
+        //         mode_enter_search  "#[bg=bright_magenta,fg=black,bold] Type search term and press <Enter> to search │ <Esc> Cancel "
+        //         mode_search        "#[bg=bright_magenta,fg=black,bold] <n> Next Match │ <p> Previous Match │ <c> Case Sensitive │ <w> Wrap Search │ <o> Whole Word │ <Esc/Enter> Back "
+        //         mode_rename_tab    "#[bg=bright_magenta,fg=black,bold] Type new tab name and press <Enter> │ <Esc> Cancel "
+        //         mode_rename_pane   "#[bg=bright_magenta,fg=black,bold] Type new pane name and press <Enter> │ <Esc> Cancel "
+        //         mode_session       "#[bg=bright_magenta,fg=black,bold] <↓/j> Down │ <↑/k> Up │ <d> Detach │ <w> Session Manager │ <c> Create Session │ <o> Connect Session │ <Esc/Enter> Back "
+        //         mode_move          "#[bg=bright_magenta,fg=black,bold] <←/h> Left │ <↓/j> Down │ <↑/k> Up │ <→/l> Right │ <n> Next Tab │ <p> Previous Tab │ <t> New Tab │ <Esc/Enter> Back "
+        //         mode_prompt        "#[bg=bright_magenta,fg=black,bold] Type response and press <Enter> │ <Esc> Cancel "
+        //         mode_tmux          "#[bg=bright_magenta,fg=black,bold] TMUX mode: Next key will be forwarded │ <Esc> Cancel "
+        //     }
+        // }
+    }
+}

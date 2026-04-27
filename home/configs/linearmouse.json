@@ -1,0 +1,83 @@
+{
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "productName" : "Razer Viper V2 Pro",
+          "vendorID" : "0x1532",
+          "productID" : "0xa6",
+          "serialNumber" : "000000000000",
+          "category" : "mouse"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1.5
+        },
+        "speed" : {
+          "vertical" : 35
+        },
+        "reverse" : {
+          "vertical" : true
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true,
+        "acceleration" : 0.6,
+        "speed" : 0.0689655172413792768
+      }
+    },
+    {
+      "pointer" : {
+        "disableAcceleration" : true,
+        "acceleration" : 0.6
+      },
+      "if" : {
+        "device" : {
+          "productName" : "Razer Viper V2 Pro",
+          "productID" : "0xa5",
+          "vendorID" : "0x1532",
+          "serialNumber" : "000000000000",
+          "category" : "mouse"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1.5
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : {
+          "vertical" : 35
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "vendorID" : "0x46d",
+          "productName" : "Pebble M350s",
+          "productID" : "0xb036",
+          "serialNumber" : "5B6754CC",
+          "category" : "mouse"
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "scrolling" : {
+        "speed" : {
+          "vertical" : 3.5
+        },
+        "acceleration" : {
+          "vertical" : 1.75
+        },
+        "reverse" : {
+          "vertical" : true
+        }
+      }
+    }
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+}

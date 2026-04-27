@@ -1,0 +1,10 @@
+{
+    "colorcolumn": 120,
+    "colorscheme": "nb",
+    "hltrailingws": true,
+    "rmtrailingsws": true,
+    "smartpsate": false,
+    "statusformatl": " $(filename) ($(status.lines),$(status.bytes))",
+    "statusformatr": "$(opt:filetype) | $(opt:encoding)[$(opt:fileformat)] | $(percentage)% ($(line),$(col)) ",
+    "tabstospaces": true,
+}
