@@ -13,8 +13,6 @@
     defaultSopsFile = ../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age.keyFile = "/Users/${primaryUser}/.config/sops/age/keys.txt";
-    # age.sshKeyPaths = [ "/Users/${primaryUser}/.ssh/id_ed25519" ];
-    # age.generateKey = true;
   };
 
   security = {
@@ -53,6 +51,14 @@
         zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
       })
       inputs.rust-overlay.overlays.default
+      (final: prev: {
+        kvazaar = prev.kvazaar.overrideAttrs (oldAttrs: {
+          doCheck = false;
+        });
+        chromaprint = prev.chromaprint.overrideAttrs (oldAttrs: {
+          doCheck = false;
+        });
+      })
     ];
   };
 

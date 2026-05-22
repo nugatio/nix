@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }:
+{
   home.packages = with pkgs; [
     # --- Nix Tooling ---
     nh
@@ -9,10 +10,32 @@
     cachix
     devenv
     comma
+    bun
+
+    # --- AI Tools ---
+    gemini-cli
+    claude-code
+    (aider-chat.overrideAttrs (oldAttrs: {
+      doCheck = false;
+    }))
+    fabric-ai
+    aichat
+    (goose-cli.overrideAttrs (oldAttrs: {
+      doCheck = false;
+    }))
+    opencode
+    crush
+    codex
+    python3Packages.llm
+    (writeShellScriptBin "feynman" ''
+      exec ${bun}/bin/bun x @companion-ai/feynman@0.2.40 "$@"
+    '')
 
     # --- Terminal & Editors ---
     zjstatus
     micro
+
+    tectonic
 
     # --- Modern CLI Replacements ---
     sd # sed
