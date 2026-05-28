@@ -1,3 +1,5 @@
+# nb@2025.05.28
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
@@ -9,11 +11,9 @@ $git_branch\
 $git_status\
 $fill\
 $time\
-
 $line_break\
-
 $sudo\
-$character
+$character\
 """
 
 add_newline = false

@@ -1,6 +1,7 @@
-# ===================================================================
-#  LATEX (Tectonic + TexLab + Latexindent)
-# ===================================================================
+# nb@2025.05.28
+
+# ////////// LATEX (Tectonic + TexLab + Latexindent) ///////////
+
 [[language]]
 name = "latex"
 scope = "source.tex"
@@ -16,7 +17,6 @@ soft-wrap = { enable = true }
 command = "texlab"
 
 [language-server.texlab.config.texlab.build]
-# We tell TexLab to run Tectonic (which is in packages.nix)
 executable = "tectonic"
 args = [
   "-X",
@@ -29,9 +29,9 @@ args = [
 onSave = true
 forwardSearchAfter = false
 
-# ===================================================================
-#  PYTHON (Ruff + BasedPyright)
-# ===================================================================
+
+# ////////// PYTHON (Ruff + BasedPyright) ///////////
+
 [[language]]
 name = "python"
 scope = "source.python"
@@ -70,9 +70,9 @@ args = ["server", "--preview"]
 [language-server.ruff.config.settings]
 organizeImports = true
 
-# ===================================================================
-#  ZIG (ZLS)
-# ===================================================================
+
+# /////////// ZIG (ZLS) ///////////
+
 [[language]]
 name = "zig"
 auto-format = true
@@ -81,9 +81,9 @@ language-servers = ["zls"]
 [language-server.zls]
 command = "zls"
 
-# ===================================================================
-#  RUST (Rust Analyzer)
-# ===================================================================
+
+# /////////// RUST (Rust Analyzer) ///////////
+
 [[language]]
 name = "rust"
 auto-format = true
@@ -93,9 +93,9 @@ language-servers = ["rust-analyzer"]
 command = "rust-analyzer"
 config.check.command = "clippy"
 
-# ===================================================================
-#  NIX (Nixd - Configured for macOS Flakes)
-# ===================================================================
+
+# /////////// NIX (Nixd) ////////////
+
 [[language]]
 name = "nix"
 language-servers = ["nixd"]
@@ -108,11 +108,10 @@ command = "nixd"
 [language-server.nixd.config.nixd]
 nixpkgs.expr = "import <nixpkgs> {}"
 formatting.command = ["nixpkgs-fmt"]
-# options.nix-darwin.expr = '(builtins.getFlake "path:${workspaceRoot}").darwinConfigurations.macbookpro.options'
 
-# ===================================================================
-#  MARKDOWN (Markdown Oxide)
-# ===================================================================
+
+# /////////// MARKDOWN (Markdown Oxide) ////////////
+
 [[language]]
 name = "markdown"
 language-servers = ["markdown-oxide"]
@@ -122,9 +121,9 @@ auto-format = true
 [language-server.markdown-oxide]
 command = "markdown-oxide"
 
-# ===================================================================
-#  R & JULIA
-# ===================================================================
+
+# /////////// R & JULIA ///////////
+
 [[language]]
 name = "r"
 language-servers = ["r-languageserver"]
@@ -149,9 +148,9 @@ args = [
 ]
 timeout = 60
 
-# ===================================================================
-#  CONFIGS (TOML / YAML / JSON / HTML / CSS)
-# ===================================================================
+
+# //////////// CONFIGS (TOML / YAML / JSON / HTML / CSS) ///////////
+
 [[language]]
 name = "toml"
 language-servers = ["taplo"]

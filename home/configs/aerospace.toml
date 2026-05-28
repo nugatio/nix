@@ -1,6 +1,6 @@
-# ============================================================================
-# GENERAL SETTINGS
-# ============================================================================
+# nb@2025.05.28
+
+# /////////// GENERAL SETTINGS //////////
 
 start-at-login = true
 enable-normalization-flatten-containers = true
@@ -14,9 +14,8 @@ default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 automatically-unhide-macos-hidden-apps = false
 
-# ============================================================================
-# GAPS AND PADDING (NO SPACING)
-# ============================================================================
+
+# ////////// GAPS AND PADDING //////////
 
 [gaps]
 inner.horizontal = 0
@@ -26,9 +25,8 @@ outer.bottom = 0
 outer.top = 0
 outer.right = 2
 
-# ============================================================================
-# WORKSPACES
-# ============================================================================
+
+# ////////// WORKSPACES //////////
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'
@@ -41,15 +39,12 @@ outer.right = 2
 8 = 'main'
 9 = 'main'
 
-# ============================================================================
-# KEYBOARD SHORTCUTS
-# ============================================================================
+
+# ////////// KEYBOARD SHORTCUTS //////////
 
 [mode.main.binding]
 
-# ============================================================================
-# FOCUS WINDOWS - Right Alt + Left logical arrows
-# ============================================================================
+# :::::::::: FOCUS WINDOWS (R-Alt | L-Arrows) ::::::::::
 
 alt-c = ['focus left', 'move-mouse window-lazy-center']
 alt-m = ['focus up', 'move-mouse window-lazy-center']
@@ -58,50 +53,40 @@ alt-n = ['focus down', 'move-mouse window-lazy-center']
 
 alt-s = ['focus-back-and-forth', 'move-mouse window-lazy-center']
 
-# ============================================================================
-# SWAP WINDOWS - Right Alt+Shift + Left hand (CMTN arrows)
-# ============================================================================
+
+# :::::::::: SWAP WINDOWS (R-Alt + R-Shift | L-Arrows) ::::::::::
 
 alt-shift-c = 'swap left'
 alt-shift-m = 'swap up'
 alt-shift-t = 'swap right'
 alt-shift-n = 'swap down'
 
-# ============================================================================
-# MOVE WINDOWS - Left Alt + Right hand (AEIO arrows) - NO SHIFT
-# ============================================================================
+
+# :::::::::: MOVE WINDOWS (L-Alt | R-Arrows) ::::::::::
 
 alt-a = 'move left'
 alt-shift-quote = 'move up'
 alt-i = 'move right'
 alt-e = 'move down'
 
-# ============================================================================
-# JOIN-WITH WINDOWS - Left Alt+Shift + Right hand (AEIO arrows)
-# ============================================================================
+
+# :::::::::: JOIN-WITH WINDOWS (L-Alt + L-Shift | R-Arrows) ::::::::::
 
 alt-shift-a = 'join-with left'
 alt-quote = 'join-with up'
 alt-shift-i = 'join-with right'
 alt-shift-e = 'join-with down'
 
-# ============================================================================
-# RESIZE WINDOWS - Left Alt+Shift + Right logical arrows
-# ============================================================================
 
-# alt-period = 'resize smart +50'
-# alt-u = 'resize smart -50'
-# alt-j = 'resize smart-opposite +50'
-# alt-y = 'resize smart-opposite -50'
+# :::::::::: RESIZE WINDOWS (L-Alt + L-Shift | R-Square) ::::::::::
 
 alt-period = 'resize height +50'
 alt-u = 'resize height -50'
 alt-j = 'resize width +50'
 alt-y = 'resize width -50'
 
-# ============================================================================
-# LAYOUT OPERATIONS
-# ============================================================================
+
+# :::::::::: LAYOUT OPERATIONS (Alt | Misc) ::::::::::
 
 alt-r = 'layout tiles horizontal vertical'
 alt-b = 'balance-sizes'
@@ -110,9 +95,8 @@ alt-k = 'flatten-workspace-tree'
 alt-f = 'fullscreen'
 alt-shift-f = 'macos-native-fullscreen'
 
-# ============================================================================
-# WORKSPACES - Left Alt + Numbers
-# ============================================================================
+
+# :::::::::: WORKSPACES (L-Alt + Nums) ::::::::::
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -124,22 +108,19 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 
-# Quick workspace navigation
 alt-tab = 'workspace next'
 alt-shift-tab = 'workspace prev'
 
-# ============================================================================
-# FLOATING MOVE OPERATIONS
-# ============================================================================
+
+# :::::::::: FLOATING MOVE OPERATIONS (R-Alt | L-Square) ::::::::::
 
 alt-g = "exec-and-forget open -g 'hammerspoon://moveWindow?x=150&y=0'"
 alt-w = "exec-and-forget open -g 'hammerspoon://moveWindow?x=-150&y=0'"
 alt-p = "exec-and-forget open -g 'hammerspoon://moveWindow?y=-150&x=0'"
 alt-d = "exec-and-forget open -g 'hammerspoon://moveWindow?y=150&x=0'"
 
-# ============================================================================
-# MOVE WINDOW TO WORKSPACE - Left Alt+Shift + Numbers
-# ============================================================================
+
+# :::::::::: MOVE WINDOW TO WORKSPACE (L-Alt + L-Shift | Numbers) ::::::::::
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
@@ -151,9 +132,8 @@ alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 
-# ============================================================================
-# CENTERED WINDOW MODES
-# ============================================================================
+
+# :::::::::: CENTERED WINDOW MODES :::::::::::
 
 alt-l = 'layout floating tiling'
 alt-x = "exec-and-forget open -g 'hammerspoon://centerWindow?width=0.7&height=1.0'"
@@ -174,22 +154,19 @@ alt-z = "exec-and-forget open -g 'hammerspoon://centerWindow?width=0.5&height=0.
 #     'move-floating-window vertical-center'
 # ]
 
-# ============================================================================
-# SYSTEM
-# ============================================================================
+
+# ::::::::::: SYSTEM ::::::::::
 
 alt-shift-r = 'reload-config'
 
-# ============================================================================
-# CLOSE & QUIT WINDOWS
-# ============================================================================
+
+# :::::::::: CLOSE & QUIT WINDOWS ::::::::::
 
 alt-q = 'macos-native-minimize'
 alt-shift-q = 'close --quit-if-last-window'
 
-# ============================================================================
-# APP RULES (floating windows)
-# ============================================================================
+
+# ////////// APP RULES ///////////
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'

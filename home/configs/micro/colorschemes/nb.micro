@@ -19,14 +19,9 @@ color-link diff-modified "yellow"
 color-link diff-deleted "red"
 color-link gutter-error ",red"
 color-link gutter-warning "red"
-#Cursor line causes readability issues. Disabled for now.
-#color-link cursor-line "white,black"
 color-link color-column "235"
-#No extended types. (bool in C)
 color-link type.extended "default"
-#No bracket highlighting.
 color-link symbol.brackets "default"
-#Color shebangs the comment color
 color-link preproc.shebang "comment"
 color-link match-brace ",magenta"
 color-link tab-error "brightred"

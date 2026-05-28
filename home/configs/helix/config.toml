@@ -1,4 +1,6 @@
-## GLOBAL CONFIGURATION
+# nb@2025.05.28
+
+# ////////// GLOBAL CONFIGURATION //////////
 
 theme = "modern"
 
@@ -11,9 +13,27 @@ trim-trailing-whitespace = true
 line-number = "relative"
 color-modes = true
 
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.file-picker]
+hidden = false
+
 [editor.statusline]
 left = ["mode", "separator", "diagnostics", "register", "spinner"]
-center = ["file-name", "file-encoding", "file-type", "separator", "file-modification-indicator", "read-only-indicator", "version-control"]
+center = [
+  "file-name",
+  "file-encoding",
+  "file-type",
+  "separator",
+  "file-modification-indicator",
+  "read-only-indicator",
+  "version-control",
+]
 right = ["selections", "separator", "position", "total-line-numbers"]
 
 [editor.cursor-shape]
@@ -23,13 +43,16 @@ select = "underline"
 
 [editor.indent-guides]
 render = true
-character = "┊" # Some characters that work well: "▏", "┆", "┊", "⸽"
+character = "┊"
 skip-levels = 1
 
-## NORMAL MODE KEYBINDINGS (YOUR CUSTOM MAPPINGS)
+
+# ////////// NORMAL MODE KEYBINDINGS //////////
+
 [keys.normal]
 
-### 1. NAVIGATION & MOVEMENT (Left Hand)
+# :::::::::: NAVIGATION & MOVEMENT (Left Hand) :::::::::::
+
 # Basic movement
 c = "move_char_left"
 m = "move_line_up"
@@ -79,7 +102,9 @@ Z = ":buffer-close"
 "!" = "shell_pipe"
 "?" = "command_palette"
 
-### 2. EDITING & SELECTION (Right Hand)
+
+# :::::::::: EDITING & SELECTION (Right Hand) ::::::::::
+
 # Insert Modes
 "," = "append_mode"
 ";" = "insert_at_line_end"
@@ -123,7 +148,9 @@ B = "no_op"
 "-" = "increment"
 "+" = "decrement"
 
-### 3. MINOR MODES (Normal Mode Definitions)
+
+# :::::::::: MINOR MODES ::::::::::
+
 # Goto mode
 [keys.normal.backspace]
 g = "goto_file_start"
@@ -236,11 +263,12 @@ R = "replace_selections_with_clipboard"
 "?" = "command_palette"
 
 
-## SELECT MODE KEYBINDINGS (For Consistency)
+# ////////// SELECT MODE KEYBINDINGS //////////
 
 [keys.select]
 
-### 1. NAVIGATION & MOVEMENT (Left Hand - Extend commands)
+# :::::::::: NAVIGATION & MOVEMENT (Left Hand) ::::::::::
+
 # Basic movement
 c = "extend_char_left"
 m = "extend_line_up"
@@ -282,8 +310,10 @@ S = "no_op"
 "!" = "shell_pipe"
 "?" = "command_palette"
 
-### 2. EDITING & SELECTION (Right Hand)
-# Insert Modes (These keys will delete selection and switch to insert mode)
+
+# :::::::::: EDITING & SELECTION (Right Hand) ::::::::::
+
+# Insert Modes
 a = "insert_mode"
 A = "insert_at_line_start"
 e = "normal_mode"
@@ -316,10 +346,11 @@ J = "join_selections_space"
 "-" = "increment"
 "+" = "decrement"
 
-### 3. MINOR MODES (Select Mode Definitions - Default Style)
+
+# :::::::::: MINOR MODES (Select Mode Definition) ::::::::::
+
 # Goto mode
 [keys.select.backspace]
-# Extend commands (positional movements)
 g = "extend_to_file_start"
 "|" = "extend_to_column"
 k = "extend_to_last_line"
@@ -330,7 +361,7 @@ j = "extend_line_down"
 e = "extend_line_up"
 w = "extend_next_word_start"
 
-# Goto commands (jumps & view positioning - stay as goto)
+# Goto commands (jumps & view positioning)
 f = "goto_file"
 h = "goto_window_top"
 m = "goto_window_center"

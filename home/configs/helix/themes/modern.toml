@@ -1,52 +1,58 @@
-# -----------------------------------------------------------------------------
-# HELIX THEME: MODERN (Inherits Base16 Terminal)
-# -----------------------------------------------------------------------------
+# nb@2025.05.28
+
+# //////////// HELIX THEME: MODERN (Inherits Base16 Terminal) ///////////
+
 inherits = "base16_terminal"
 
-# -----------------------------------------------------------------------------
-# 1. STATUSLINE (Bottom Bar)
-# -----------------------------------------------------------------------------
-"ui.statusline"           = { bg = "white", fg = "black", modifiers = ["bold"] }
-"ui.statusline.inactive"  = { bg = "gray",  fg = "white" }
+
+# /////////// STATUSLINE (Bottom Bar) ///////////
+
+"ui.statusline" = { bg = "white", fg = "black", modifiers = ["bold"] }
+"ui.statusline.inactive" = { bg = "gray", fg = "white" }
 "ui.statusline.separator" = { fg = "black", bg = "white" }
 
-# -----------------------------------------------------------------------------
-# 2. MODES
-# -----------------------------------------------------------------------------
-"ui.statusline.normal" = { bg = "light-blue", fg = "#ffffff", modifiers = ["bold"] }
-"ui.statusline.insert" = { bg = "light-red", fg = "#ffffff", modifiers = ["bold"] }
-"ui.statusline.select" = { bg = "light-magenta", fg = "#ffffff", modifiers = ["bold"] }
 
-# -----------------------------------------------------------------------------
-# 3. MENUS & POPUPS
-# -----------------------------------------------------------------------------
-"ui.menu"            = { bg = "white", fg = "black" }
-"ui.menu.selected"   = { bg = "black", fg = "white", modifiers = ["bold"] }
-"ui.popup"           = { bg = "white", fg = "black" }
-"ui.popup.info"      = { bg = "white", fg = "black" }
-"ui.window"          = { bg = "white", fg = "black" }
-"ui.help"            = { bg = "white", fg = "black" }
+# /////////// MODES ////////////
 
-# -----------------------------------------------------------------------------
-# 4. DIAGNOSTICS (Light BG, Black Text, Line Underline)
-# -----------------------------------------------------------------------------
-# Using 'light-' variants for background.
-# Text is 'black' for high contrast (Starship style).
-# Underline is 'line' (straight) and colored 'black' to be visible on the bg.
+"ui.statusline.normal" = { bg = "light-blue", fg = "#ffffff", modifiers = [
+  "bold",
+] }
+"ui.statusline.insert" = { bg = "light-red", fg = "#ffffff", modifiers = [
+  "bold",
+] }
+"ui.statusline.select" = { bg = "light-magenta", fg = "#ffffff", modifiers = [
+  "bold",
+] }
 
-"diagnostic.error"   = { bg = "light-red",    fg = "white", underline = { color = "white", style = "line" }, modifiers = ["bold"] }
-"diagnostic.warning" = { bg = "light-yellow", fg = "black", underline = { color = "black", style = "line" }, modifiers = ["bold"] }
-"diagnostic.info"    = { bg = "light-blue",   fg = "white", underline = { color = "white", style = "line" }, modifiers = ["bold"] }
-"diagnostic.hint"    = { bg = "light-green",  fg = "black", underline = { color = "black", style = "line" }, modifiers = ["bold"] }
 
-# Info text in the editor (LSP hints)
-# "ui.text.info"       = { fg = "cyan", modifiers = ["bold"] }
-# "info"               = { fg = "cyan", modifiers = ["bold"] }
-# "hint"               = { fg = "green", modifiers = ["bold"] }
+# /////////// MENUS & POPUPS ////////////
 
-# -----------------------------------------------------------------------------
-# 5. BUFFERLINE
-# -----------------------------------------------------------------------------
+"ui.menu" = { bg = "white", fg = "black" }
+"ui.menu.selected" = { bg = "black", fg = "white", modifiers = ["bold"] }
+"ui.popup" = { bg = "white", fg = "black" }
+"ui.popup.info" = { bg = "white", fg = "black" }
+"ui.window" = { bg = "white", fg = "black" }
+"ui.help" = { bg = "white", fg = "black" }
+
+
+# /////////// DIAGNOSTICS //////////
+
+"diagnostic.error" = { bg = "light-red", fg = "white", underline = { color = "white", style = "line" }, modifiers = [
+  "bold",
+] }
+"diagnostic.warning" = { bg = "light-yellow", fg = "black", underline = { color = "black", style = "line" }, modifiers = [
+  "bold",
+] }
+"diagnostic.info" = { bg = "light-blue", fg = "white", underline = { color = "white", style = "line" }, modifiers = [
+  "bold",
+] }
+"diagnostic.hint" = { bg = "light-green", fg = "black", underline = { color = "black", style = "line" }, modifiers = [
+  "bold",
+] }
+
+
+# /////////// BUFFERLINE ////////////
+
 "ui.bufferline.active" = { bg = "white", fg = "black", modifiers = ["bold"] }
-"ui.bufferline"        = { bg = "gray",  fg = "white" }
+"ui.bufferline" = { bg = "gray", fg = "white" }
 "ui.bufferline.background" = { bg = "black" }
