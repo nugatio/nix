@@ -56,10 +56,15 @@
         if command -q nix-your-shell
           nix-your-shell fish | source
         end
+        if status is-interactive
+          and not set -q ZELLIJ
+          and not set -q IN_NIX_SHELL
+          and test -t 0
+          zellij
+        end
       '';
-      plugins = [];
+      plugins = [ ];
     };
-
     nushell = {
       enable = true;
       extraConfig = ''
@@ -73,9 +78,9 @@
     };
 
     starship = { enable = true; enableFishIntegration = true; enableTransience = true; };
-    zoxide   = { enable = true; enableFishIntegration = true; };
-    atuin    = { enable = true; enableFishIntegration = true; };
-    direnv   = { enable = true; nix-direnv.enable = true; };
+    zoxide = { enable = true; enableFishIntegration = true; };
+    atuin = { enable = true; enableFishIntegration = true; };
+    direnv = { enable = true; nix-direnv.enable = true; };
     carapace = { enable = true; enableFishIntegration = true; };
     nix-index.enable = true;
 
@@ -86,7 +91,7 @@
 
     eza = { enable = true; enableFishIntegration = true; };
     fzf = { enable = true; enableFishIntegration = true; };
-    yazi = { enable = true; enableFishIntegration = true; };
+    yazi = { enable = true; enableFishIntegration = false; };
     broot = { enable = true; enableFishIntegration = true; };
 
     ripgrep = { enable = true; };

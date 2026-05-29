@@ -59,8 +59,6 @@
     trippy # mtr (network diagnostics)
     bandwhich # network usage monitor
 
-    yazi
-
     # --- Git & Generic Workflows ---
     just # command runner
     onefetch # git repo summary

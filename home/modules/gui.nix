@@ -40,6 +40,7 @@
     };
     "zellij/layouts".source = ../configs/zellij/layouts;
     "zellij/plugins/zjstatus.wasm".source = "${pkgs.zjstatus}/bin/zjstatus.wasm";
+    "yazi".source = ../configs/yazi;
   };
   home.file = {
     ".hammerspoon/".source = ../configs/hammerspoon;
