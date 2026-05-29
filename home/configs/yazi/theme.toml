@@ -1,0 +1,60 @@
+[mgr]
+cwd = { fg = "lightblue", bold = true }
+
+hovered = { fg = "black", bg = "lightred", bold = true }
+preview_hovered = { fg = "black", bg = "lightblue", bold = true }
+
+find_keyword = { fg = "black", bg = "yellow", bold = true }
+find_position = { fg = "lightmagenta", bg = "reset", bold = true }
+
+marker_copied = { fg = "green", bg = "green" }
+marker_cut = { fg = "lightred", bg = "lightred" }
+marker_marked = { fg = "lightblue", bg = "lightblue" }
+marker_selected = { fg = "yellow", bg = "yellow" }
+
+count_copied = { fg = "black", bg = "green" }
+count_cut = { fg = "black", bg = "lightred" }
+count_selected = { fg = "black", bg = "yellow" }
+
+border_symbol = " "
+border_style = { fg = "black" }
+
+[indicator]
+padding = { open = "", close = "" }
+
+[tabs]
+active = { fg = "white", bg = "black", bold = true }
+inactive = { fg = "white", bg = "lightblue" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "white", bg = "lightred", bold = true }
+normal_alt = { fg = "white", bg = "black" }
+select_main = { fg = "black", bg = "yellow", bold = true }
+select_alt = { fg = "white", bg = "black" }
+unset_main = { fg = "white", bg = "lightblue", bold = true }
+unset_alt = { fg = "white", bg = "black" }
+
+[status]
+overall = { fg = "white", bg = "black" }
+
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+perm_type = { fg = "lightblue" }
+perm_read = { fg = "yellow" }
+perm_write = { fg = "lightred" }
+perm_exec = { fg = "green" }
+perm_sep = { fg = "darkgray" }
+
+progress_label = { fg = "white", bold = true }
+progress_normal = { fg = "lightblue", bg = "black" }
+progress_error = { fg = "lightred", bg = "black" }
+
+[filetype]
+rules = [
+  { url = "*/", fg = "lightblue", bold = true },
+  { url = "*", is = "exec", fg = "green" },
+  { url = "*", fg = "white" },
+]

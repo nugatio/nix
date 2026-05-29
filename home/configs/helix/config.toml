@@ -263,6 +263,40 @@ R = "replace_selections_with_clipboard"
 "?" = "command_palette"
 
 
+# :::::::::: YAZI FILE PICKER (Helix-native, yazi-rs docs / PR #2461) ::::::::::
+# space o = open | v = vsplit | s = hsplit. Runs yazi *inside* Helix, writes the
+# pick to a chooser file, then Helix opens it. No Zellij, no pane handoff.
+# `%{buffer_name}` / `%sh{...}` are Helix expansions (intentional, not escaped).
+[keys.normal.space.o]
+o = [
+  ':sh rm -f /tmp/helix-yazi-chooser',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/helix-yazi-chooser',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/helix-yazi-chooser}',
+  ':redraw',
+  ':set mouse false',
+  ':set mouse true',
+]
+v = [
+  ':sh rm -f /tmp/helix-yazi-chooser',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/helix-yazi-chooser',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':vsplit %sh{cat /tmp/helix-yazi-chooser}',
+  ':redraw',
+  ':set mouse false',
+  ':set mouse true',
+]
+s = [
+  ':sh rm -f /tmp/helix-yazi-chooser',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/helix-yazi-chooser',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':hsplit %sh{cat /tmp/helix-yazi-chooser}',
+  ':redraw',
+  ':set mouse false',
+  ':set mouse true',
+]
+
+
 # ////////// SELECT MODE KEYBINDINGS //////////
 
 [keys.select]
