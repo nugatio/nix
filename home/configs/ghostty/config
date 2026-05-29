@@ -6,7 +6,7 @@ macos-titlebar-style = hidden
 
 window-colorspace = display-p3
 
-macos-auto-secure-input = true
+macos-auto-secure-input       = true
 macos-secure-input-indication = true
 
 keybind = cmd+alt+i=unbind
@@ -22,26 +22,22 @@ keybind = alt+m=unbind
 
 # ////////// FONT & TEXT RENDERING //////////
 
-font-family = "PragmataPro Mono Liga"
-font-size = 13
-
-font-thicken = true
+font-family           = "PragmataPro Mono Liga"
+font-size             = 13
+font-thicken          = true
 font-thicken-strength = 127
-
-bold-is-bright = true
-
-adjust-cell-width = 0%
-adjust-cell-height = 0%
-
-font-feature = calt
-font-feature = liga
-font-feature = dlig
+bold-is-bright        = true
+adjust-cell-width     = 0%
+adjust-cell-height    = 0%
+font-feature          = calt
+font-feature          = liga
+font-feature          = dlig
 
 
 # ////////// CURSOR & MOUSE //////////
 
-cursor-style = block
-cursor-style-blink = true
+cursor-style        = block
+cursor-style-blink  = true
 cursor-invert-fg-bg = true
 
 mouse-hide-while-typing = true
@@ -59,7 +55,7 @@ window-padding-balance = true
 
 # ////////// SHELL INTEGRATION //////////
 
-shell-integration = detect
+shell-integration          = detect
 shell-integration-features = no-cursor
 
 
@@ -67,39 +63,66 @@ shell-integration-features = no-cursor
 
 minimum-contrast = 1.1
 
+# # Background & Foreground
+# background           = #000000
+# foreground           = #efefef
+# selection-background = #dfdfdf
+# selection-foreground = #202020
+# cursor-color         = #d9d9d9
+
+# # Standard Colors (0-7)
+# palette = 0=#000000
+# palette = 1=#ee799c
+# palette = 2=#97fca5
+# palette = 3=#ffff86
+# palette = 4=#799bf8
+# palette = 5=#c275f7
+# palette = 6=#97fcfd
+# palette = 7=#bfbfbf
+
+# # Bright Colors (8-15)
+# palette = 8=#4d4d4d
+# palette = 9=#eb4672
+# palette = 10=#7cfb81
+# palette = 11=#ffff60
+# palette = 12=#416ff6
+# palette = 13=#bf3ff6
+# palette = 14=#7cfbfd
+# palette = 15=#ffffff
+
 # Background & Foreground
-background = #000000
-foreground = #efefef
-selection-background = #dfdfdf
-selection-foreground = #202020
-cursor-color = #d9d9d9
+background            = #232136
+foreground            = #e0def4
+selection-background  = #44415a
+selection-foreground  = #e0def4
+cursor-color          = #56526e
 
-# Standard Colors (0-7)
-palette = 0=#000000
-palette = 1=#ee799c
-palette = 2=#97fca5
-palette = 3=#ffff86
-palette = 4=#799bf8
-palette = 5=#c275f7
-palette = 6=#97fcfd
-palette = 7=#bfbfbf
+# Standard Colors (0–7)
+palette = 0=#2a273f
+palette = 1=#eb6f92
+palette = 2=#3e8fb0
+palette = 3=#f6c177
+palette = 4=#9ccfd8
+palette = 5=#c4a7e7
+palette = 6=#ea9a97
+palette = 7=#e0def4
 
-# Bright Colors (8-15)
-palette = 8=#4d4d4d
-palette = 9=#eb4672
-palette = 10=#7cfb81
-palette = 11=#ffff60
-palette = 12=#416ff6
-palette = 13=#bf3ff6
-palette = 14=#7cfbfd
-palette = 15=#ffffff
+# Bright Colors (8–15)
+palette = 8=#6e6a86
+palette = 9=#eb6f92
+palette = 10=#3e8fb0
+palette = 11=#f6c177
+palette = 12=#9ccfd8
+palette = 13=#c4a7e7
+palette = 14=#ea9a97
+palette = 15=#e0def4
 
 
 # ////////// SHADER //////////
 
 custom-shader-animation = true
-custom-shader = shaders/cursor_sweep.glsl
-custom-shader = shaders/ripple_rectangle_cursor.glsl
+custom-shader           = shaders/cursor_sweep.glsl
+custom-shader           = shaders/ripple_rectangle_cursor.glsl
 
 
 # ////////// KEY COMBOS //////////

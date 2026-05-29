@@ -1,58 +1,61 @@
-# nb@2025.05.28
+# nb@2025.05.30
 
 # //////////// HELIX THEME: MODERN (Inherits Base16 Terminal) ///////////
 
 inherits = "base16_terminal"
 
 
-# /////////// STATUSLINE (Bottom Bar) ///////////
+# /////////// STATUSLINE ///////////
 
-"ui.statusline" = { bg = "white", fg = "black", modifiers = ["bold"] }
-"ui.statusline.inactive" = { bg = "gray", fg = "white" }
-"ui.statusline.separator" = { fg = "black", bg = "white" }
+"ui.statusline" = { fg = "yellow", bg = "black" }
+"ui.statusline.inactive" = { fg = "gray", bg = "black" }
+"ui.statusline.separator" = { fg = "gray", bg = "black" }
 
 
-# /////////// MODES ////////////
+# /////////// MODES ///////////
 
-"ui.statusline.normal" = { bg = "light-blue", fg = "#ffffff", modifiers = [
+"ui.statusline.normal" = { bg = "light-blue", fg = "black", modifiers = [
   "bold",
 ] }
-"ui.statusline.insert" = { bg = "light-red", fg = "#ffffff", modifiers = [
+"ui.statusline.insert" = { bg = "light-red", fg = "black", modifiers = [
   "bold",
 ] }
-"ui.statusline.select" = { bg = "light-magenta", fg = "#ffffff", modifiers = [
-  "bold",
-] }
-
-
-# /////////// MENUS & POPUPS ////////////
-
-"ui.menu" = { bg = "white", fg = "black" }
-"ui.menu.selected" = { bg = "black", fg = "white", modifiers = ["bold"] }
-"ui.popup" = { bg = "white", fg = "black" }
-"ui.popup.info" = { bg = "white", fg = "black" }
-"ui.window" = { bg = "white", fg = "black" }
-"ui.help" = { bg = "white", fg = "black" }
-
-
-# /////////// DIAGNOSTICS //////////
-
-"diagnostic.error" = { bg = "light-red", fg = "white", underline = { color = "white", style = "line" }, modifiers = [
-  "bold",
-] }
-"diagnostic.warning" = { bg = "light-yellow", fg = "black", underline = { color = "black", style = "line" }, modifiers = [
-  "bold",
-] }
-"diagnostic.info" = { bg = "light-blue", fg = "white", underline = { color = "white", style = "line" }, modifiers = [
-  "bold",
-] }
-"diagnostic.hint" = { bg = "light-green", fg = "black", underline = { color = "black", style = "line" }, modifiers = [
+"ui.statusline.select" = { bg = "light-magenta", fg = "black", modifiers = [
   "bold",
 ] }
 
 
-# /////////// BUFFERLINE ////////////
+# /////////// MENUS & POPUPS ///////////
 
-"ui.bufferline.active" = { bg = "white", fg = "black", modifiers = ["bold"] }
-"ui.bufferline" = { bg = "gray", fg = "white" }
+"ui.menu" = { bg = "black", fg = "white" }
+"ui.menu.selected" = { bg = "yellow", fg = "black", modifiers = ["bold"] }
+"ui.popup" = { bg = "black", fg = "white" }
+"ui.popup.info" = { bg = "black", fg = "yellow" }
+"ui.window" = { bg = "black" }
+"ui.help" = { bg = "black", fg = "white" }
+
+
+# /////////// DIAGNOSTICS ///////////
+
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info" = { underline = { color = "blue", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "green", style = "curl" } }
+
+
+# /////////// BUFFERLINE ///////////
+
+"ui.bufferline.active" = { fg = "yellow", bg = "black", modifiers = ["bold"] }
+"ui.bufferline" = { fg = "gray", bg = "black" }
 "ui.bufferline.background" = { bg = "black" }
+
+
+# /////////// SYNTAX ///////////
+
+"ui.selection.primary" = { bg = "#8f0086", fg = "white" }
+"operator" = { fg = "red" }
+"keyword.control.return" = { fg = "red" }
+"keyword.control.exception" = { fg = "red", modifiers = ["bold"] }
+"keyword.control.repeat" = { fg = "#cfd89c", modifiers = ["italic"] }
+"string.special.symbol" = { fg = "magenta" }
+"variable.builtin" = { fg = "white", modifiers = ["italic"] }
