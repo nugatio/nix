@@ -263,10 +263,8 @@ R = "replace_selections_with_clipboard"
 "?" = "command_palette"
 
 
-# :::::::::: YAZI FILE PICKER (Helix-native, yazi-rs docs / PR #2461) ::::::::::
-# space o = open | v = vsplit | s = hsplit. Runs yazi *inside* Helix, writes the
-# pick to a chooser file, then Helix opens it. No Zellij, no pane handoff.
-# `%{buffer_name}` / `%sh{...}` are Helix expansions (intentional, not escaped).
+# ////////// YAZI FILE PICKER //////////
+
 [keys.normal.space.o]
 o = [
   ':sh rm -f /tmp/helix-yazi-chooser',

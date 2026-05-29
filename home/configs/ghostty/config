@@ -62,6 +62,7 @@ window-padding-balance = true
 shell-integration = detect
 shell-integration-features = no-cursor
 
+
 # ////////// COLOR PALETTE //////////
 
 minimum-contrast = 1.1
