@@ -18,13 +18,11 @@
         email = "mail@nbitzer.de";
       };
 
-      # Aliases
       alias = {
         absorb = "absorb";
         fixup = "commit --fixup";
       };
 
-      # Core settings
       init.defaultBranch = "main";
       pull.rebase = true;
       push.autoSetupRemote = true;
@@ -40,7 +38,6 @@
       diff.colorMoved = "default";
 
       merge.conflictstyle = "zdiff3";
-      # merge.tool is handled by delta integration below
 
       rerere.enabled = true;
       log.date = "iso";
@@ -53,7 +50,6 @@
         autocrlf = "input";
         preloadindex = true;
         fscache = true;
-        # pager is handled by delta integration below
       };
 
       blame.ignoreRevsFile = ".git-blame-ignore-revs";
@@ -99,7 +95,7 @@
 
   programs.delta = {
     enable = true;
-    enableGitIntegration = true; # automatically sets core.pager and merge.tool
+    enableGitIntegration = true;
     options = {
       navigate = true;
       light = false;

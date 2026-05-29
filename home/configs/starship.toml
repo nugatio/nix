@@ -63,7 +63,7 @@ truncation_symbol = "…/"
 home_symbol = "~"
 read_only = ""
 format = "[ $path$read_only ]($style)"
-style = "bg:bright-blue fg:bold bright-white"
+style = "bg:bright-blue fg:bold black"
 
 [username]
 style_user = "bg:yellow fg:black"
@@ -84,17 +84,17 @@ format = '[ $symbol $branch ]($style)'
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:bright-purple fg:bright-white"
+style = "bg:bright-purple fg:black"
 format = '[ $time ]($style)'
 
 [sudo]
 format = "[ $symbol]($style)"
-style = "bg:bright-red fg:bold white"
+style = "bg:bright-red fg:bold black"
 symbol = "⚡"
 disabled = false
 
 [hostname]
 ssh_only = false
 format = "[ $hostname ]($style)"
-style = "fg:bright-white bg:bright-red"
+style = "fg:black bg:bright-red"
 disabled = false

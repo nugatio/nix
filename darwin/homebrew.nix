@@ -16,7 +16,6 @@
       "aldente"
       "alt-tab"
       "antigravity"
-      # "app-cleaner"
       "balenaetcher"
       "bartender"
       "betterdisplay"

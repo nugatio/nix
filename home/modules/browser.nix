@@ -1,6 +1,6 @@
 { pkgs, config, lib, primaryUser, ... }: {
 
-programs.librewolf = {
+  programs.librewolf = {
     enable = true;
     package = pkgs.librewolf;
 
@@ -65,7 +65,7 @@ programs.librewolf = {
       settings = {
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {
-            widget-overflow-fixed-list = [];
+            widget-overflow-fixed-list = [ ];
             unified-extensions-area = [
               "newtaboverride_agenedia_com-browser-action"
               "enhancerforyoutube_maximerf_addons_mozilla_org-browser-action"
@@ -148,8 +148,7 @@ programs.librewolf = {
     };
   };
 
-  # Gracefully link the private places.sqlite (history/bookmarks) if the private repo exists
-  home.activation.linkLibreWolfPlaces = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.linkLibreWolfPlaces = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     PRIVATE_DB="${config.home.homeDirectory}/.config/nix-private/librewolf/places.sqlite"
     TARGET_DIR="${config.home.homeDirectory}/Library/Application Support/librewolf/Profiles/${primaryUser}"
     TARGET_DB="$TARGET_DIR/places.sqlite"
@@ -157,12 +156,12 @@ programs.librewolf = {
     if [ -f "$PRIVATE_DB" ]; then
       echo "Linking private LibreWolf places.sqlite..."
       mkdir -p "$TARGET_DIR"
-      
+
       # If it's a file but not a symlink, back it up first
       if [ -f "$TARGET_DB" ] && [ ! -L "$TARGET_DB" ]; then
         mv "$TARGET_DB" "$TARGET_DB.backup"
       fi
-      
+
       ln -sf "$PRIVATE_DB" "$TARGET_DB"
     fi
   '';

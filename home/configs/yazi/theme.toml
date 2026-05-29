@@ -1,3 +1,5 @@
+# nb@2025.05.28
+
 [mgr]
 cwd = { fg = "lightblue", bold = true }
 
@@ -24,16 +26,16 @@ padding = { open = "", close = "" }
 
 [tabs]
 active = { fg = "white", bg = "black", bold = true }
-inactive = { fg = "white", bg = "lightblue" }
+inactive = { fg = "black", bg = "lightblue" }
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
 
 [mode]
-normal_main = { fg = "white", bg = "lightred", bold = true }
+normal_main = { fg = "black", bg = "lightred", bold = true }
 normal_alt = { fg = "white", bg = "black" }
 select_main = { fg = "black", bg = "yellow", bold = true }
 select_alt = { fg = "white", bg = "black" }
-unset_main = { fg = "white", bg = "lightblue", bold = true }
+unset_main = { fg = "black", bg = "lightblue", bold = true }
 unset_alt = { fg = "white", bg = "black" }
 
 [status]

@@ -1,7 +1,9 @@
 { pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
-    # --- Nix Tooling ---
+
+    # ////////// NIX TOOLING //////////
+
     nh
     nix-output-monitor
     nvd
@@ -12,7 +14,9 @@
     comma
     bun
 
-    # --- AI Tools ---
+
+    # ////////// AI //////////
+
     gemini-cli
     claude-code
     (aider-chat.overrideAttrs (oldAttrs: {
@@ -31,13 +35,21 @@
       exec ${bun}/bin/bun x @companion-ai/feynman@0.2.40 "$@"
     '')
 
-    # --- Terminal & Editors ---
+
+    # ////////// TERMINAL //////////
+
     zjstatus
     micro
 
-    tectonic
 
-    # --- Modern CLI Replacements ---
+    # ////////// MICS //////////
+
+    tectonic
+    uv
+
+
+    # ////////// CLI //////////
+
     sd # sed
     procs # ps
     dust # du
@@ -52,30 +64,35 @@
     tlrc # tldr client
     fastfetch
 
-    # --- Network & Monitoring ---
+
+    # ////////// NETWORK & MONITORING //////////
+
     xh # curl/wget (HTTP client)
     doggo # dig (DNS)
     gping # ping (graph)
     trippy # mtr (network diagnostics)
     bandwhich # network usage monitor
 
-    # --- Git & Generic Workflows ---
+
+    # ////////// GIT & WORKFLOWS //////////
+
     just # command runner
     onefetch # git repo summary
     git-absorb
 
-    # --- Global Container & Cluster Management ---
+
+    # ////////// CONTAINER & CLUSTER MANAGEMENT //////////
+
     lazydocker
     k9s
-    kubectl # Kept globally for ad-hoc cluster poking
+    kubectl
 
-    # --- Data Processing & Secrets ---
+
+    # ////////// DATA PROCESSING & SECRETS //////////
+
     jaq # jq clone
     yq-go # yaml processor
     usql # universal SQL client
     age # file encryption
-
-    # --- Global Bootstrappers ---
-    uv # Kept globally because `uvx` is amazing for running standalone Python CLI tools
   ];
 }

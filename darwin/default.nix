@@ -8,7 +8,6 @@
     inputs.sops-nix.darwinModules.sops
   ];
 
-  # --- SOPS (Secrets Management) ---
   sops = {
     defaultSopsFile = ../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";

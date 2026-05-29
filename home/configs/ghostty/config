@@ -26,7 +26,7 @@ font-family           = "PragmataPro Mono Liga"
 font-size             = 13
 font-thicken          = true
 font-thicken-strength = 127
-bold-is-bright        = true
+bold-is-bright        = false
 adjust-cell-width     = 0%
 adjust-cell-height    = 0%
 font-feature          = calt
@@ -63,6 +63,8 @@ shell-integration-features = no-cursor
 
 minimum-contrast = 1.1
 
+# :::::::::: BASE ::::::::::
+
 # # Background & Foreground
 # background           = #000000
 # foreground           = #efefef
@@ -89,6 +91,9 @@ minimum-contrast = 1.1
 # palette = 13=#bf3ff6
 # palette = 14=#7cfbfd
 # palette = 15=#ffffff
+
+
+# :::::::::: ROSE PINE MOON ::::::::::
 
 # Background & Foreground
 background            = #232136

@@ -2,7 +2,6 @@
 let
   repoPath = "${config.home.homeDirectory}/.config/nix-private";
 
-  # Define the apps to sync here
   syncMap = {
     "AltTab" = {
       live = "${config.home.homeDirectory}/Library/Preferences/com.lwouis.alt-tab-macos.plist";
@@ -22,12 +21,9 @@ let
     };
   };
 
-  # Script to sync FROM Live TO Repo (runs in background)
   syncBackScript = pkgs.writeShellScript "sync-plists-to-nix" ''
-    # Ensure we have the standard tools in path
     PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
 
-    # Iterate over the syncMap
     ${lib.concatStringsSep "\n" (lib.mapAttrsToList (name: paths: ''
       if [ -f "${paths.live}" ]; then
         # Check if repo file exists and is writable
@@ -55,9 +51,9 @@ let
       fi
     '') syncMap)}
   '';
-in {
-  # Activation Script: Syncs FROM Repo TO Live (runs on nix-darwin switch)
-  home.activation.importAppPlists = lib.hm.dag.entryAfter ["writeBoundary"] ''
+in
+{
+  home.activation.importAppPlists = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     echo "Importing application plists..."
 
     ${lib.concatStringsSep "\n" (lib.mapAttrsToList (name: paths: ''
@@ -77,7 +73,6 @@ in {
     fi
   '';
 
-  # Background Service: Watch for changes and sync back to Repo
   launchd.agents.plist-sync = {
     enable = true;
     config = {
@@ -87,7 +82,7 @@ in {
       RunAtLoad = false;
       StandardOutPath = "/tmp/plist-sync.log";
       StandardErrorPath = "/tmp/plist-sync.err";
-      ThrottleInterval = 30; # Wait 30s after change before syncing
+      ThrottleInterval = 30;
     };
   };
 }

@@ -13,26 +13,26 @@ layout {
                 format_space  "#[bg=bright_blue]"
 
                 // RIGHT: Bright Blue (Swap) -> Bright Magenta (Time)
-                format_right  "#[bg=bright_blue,fg=bright_white,bold] {swap_layout} #[bg=bright_magenta,fg=bright_white,bold] {datetime} "
+                format_right  "#[bg=bright_blue,fg=black,bold] {swap_layout} #[bg=bright_magenta,fg=black,bold] {datetime} "
 
                 // MODES: All set to red
-                mode_normal        "#[bg=bright_red,fg=bright_white,bold] NORMAL "
-                mode_locked        "#[bg=bright_red,fg=bright_white,bold] LOCKED "
-                mode_resize        "#[bg=bright_red,fg=bright_white,bold] RESIZE "
-                mode_pane          "#[bg=bright_red,fg=bright_white,bold] PANE "
-                mode_tab           "#[bg=bright_red,fg=bright_white,bold] TAB "
-                mode_scroll        "#[bg=bright_red,fg=bright_white,bold] SCROLL "
-                mode_enter_search  "#[bg=bright_red,fg=bright_white,bold] ENTER_SEARCH "
-                mode_search        "#[bg=bright_red,fg=bright_white,bold] SEARCH "
-                mode_rename_tab    "#[bg=bright_red,fg=bright_white,bold] RENAME_TAB "
-                mode_rename_pane   "#[bg=bright_red,fg=bright_white,bold] RENAME_PANE "
-                mode_session       "#[bg=bright_red,fg=bright_white,bold] SESSION "
-                mode_move          "#[bg=bright_red,fg=bright_white,bold] MOVE "
-                mode_prompt        "#[bg=bright_red,fg=bright_white,bold] PROMPT "
-                mode_tmux          "#[bg=bright_red,fg=bright_white,bold] TMUX "
+                mode_normal        "#[bg=bright_red,fg=black,bold] NORMAL "
+                mode_locked        "#[bg=bright_red,fg=black,bold] LOCKED "
+                mode_resize        "#[bg=bright_red,fg=black,bold] RESIZE "
+                mode_pane          "#[bg=bright_red,fg=black,bold] PANE "
+                mode_tab           "#[bg=bright_red,fg=black,bold] TAB "
+                mode_scroll        "#[bg=bright_red,fg=black,bold] SCROLL "
+                mode_enter_search  "#[bg=bright_red,fg=black,bold] ENTER_SEARCH "
+                mode_search        "#[bg=bright_red,fg=black,bold] SEARCH "
+                mode_rename_tab    "#[bg=bright_red,fg=black,bold] RENAME_TAB "
+                mode_rename_pane   "#[bg=bright_red,fg=black,bold] RENAME_PANE "
+                mode_session       "#[bg=bright_red,fg=black,bold] SESSION "
+                mode_move          "#[bg=bright_red,fg=black,bold] MOVE "
+                mode_prompt        "#[bg=bright_red,fg=black,bold] PROMPT "
+                mode_tmux          "#[bg=bright_red,fg=black,bold] TMUX "
 
                 // TABS: Number only ({index}) + Extra Padding
-                tab_normal "#[bg=bright_blue,fg=bright_white,bold]  {index}  {sync_indicator}{fullscreen_indicator}{floating_indicator}"
+                tab_normal "#[bg=bright_blue,fg=black,bold]  {index}  {sync_indicator}{fullscreen_indicator}{floating_indicator}"
                 tab_active "#[bg=black,fg=bright_white,bold]  {index}  {sync_indicator}{fullscreen_indicator}{floating_indicator}"
 
                 // Indicators
