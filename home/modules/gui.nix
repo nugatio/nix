@@ -6,7 +6,7 @@
 
   programs.zellij = {
     enable = true;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
   };
 
   programs.helix = {
@@ -40,6 +40,7 @@
     "aerospace/aerospace.toml".source = ../configs/aerospace.toml;
     "helix".source = ../configs/helix;
     "ghostty".source = ../configs/ghostty;
+    "wezterm".source = ../configs/wezterm;
     "micro".source = ../configs/micro;
     "linearmouse/linearmouse.json".source = ../configs/linearmouse.json;
     "zellij/config.kdl" = {

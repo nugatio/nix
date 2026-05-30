@@ -59,6 +59,7 @@
       "tuta-mail"
       "utm"
       "visual-studio-code"
+      "wezterm"
       "zed"
       "zotero"
     ];

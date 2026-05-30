@@ -102,7 +102,7 @@
 
     eza = { enable = true; enableFishIntegration = true; };
     fzf = { enable = true; enableFishIntegration = true; };
-    yazi = { enable = true; enableFishIntegration = false; };
+    yazi = { enable = true; enableFishIntegration = true; };
     broot = { enable = true; enableFishIntegration = true; };
 
     ripgrep = { enable = true; };
