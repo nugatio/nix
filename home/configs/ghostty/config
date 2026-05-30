@@ -1,4 +1,4 @@
-# nb@2025.05.28
+# nb@2026.05.30
 
 # ////////// CORE TERMINAL APPEARANCE //////////
 
@@ -22,16 +22,23 @@ keybind = alt+m=unbind
 
 # ////////// FONT & TEXT RENDERING //////////
 
-font-family           = "PragmataPro Mono Liga"
-font-size             = 13
-font-thicken          = true
-font-thicken-strength = 127
-bold-is-bright        = false
-adjust-cell-width     = 0%
-adjust-cell-height    = 0%
-font-feature          = calt
-font-feature          = liga
-font-feature          = dlig
+font-family                = "PragmataPro VF Mono Liga"
+font-family-bold           = "PragmataPro VF Mono Liga"
+font-family-italic         = "PragmataPro VF Mono Liga"
+font-family-bold-italic    = "PragmataPro VF Mono Liga"
+font-size                  = 13
+font-variation             = wght=450
+font-variation-bold        = wght=750
+font-variation-italic      = wght=450
+font-variation-bold-italic = wght=750
+font-thicken               = false
+font-thicken-strength      = 80
+bold-is-bright             = false
+adjust-cell-width          = 0%
+adjust-cell-height         = 0%
+font-feature               = calt
+font-feature               = liga
+font-feature               = dlig
 
 
 # ////////// CURSOR & MOUSE //////////
@@ -45,7 +52,7 @@ mouse-hide-while-typing = true
 copy-on-select = clipboard
 
 
-# ///////// WINDOW LAYOUT & PADDING //////////
+# ////////// WINDOW LAYOUT & PADDING //////////
 
 window-padding-x = 0
 window-padding-y = 0

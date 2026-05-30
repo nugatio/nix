@@ -1,18 +1,18 @@
-# nb@2025.05.28
+# nb@2026.05.30
 
-# //////////// HELIX THEME: MODERN (Inherits Base16 Terminal) ///////////
+# ////////// HELIX THEME: MODERN (Inherits Base16 Terminal) //////////
 
 inherits = "base16_terminal"
 
 
-# /////////// STATUSLINE (Bottom Bar) ///////////
+# ////////// STATUSLINE (Bottom Bar) //////////
 
 "ui.statusline" = { bg = "white", fg = "black", modifiers = ["bold"] }
 "ui.statusline.inactive" = { bg = "gray", fg = "white" }
 "ui.statusline.separator" = { fg = "black", bg = "white" }
 
 
-# /////////// MODES ////////////
+# ////////// MODES //////////
 
 "ui.statusline.normal" = { bg = "light-blue", fg = "#ffffff", modifiers = [
   "bold",
@@ -25,7 +25,7 @@ inherits = "base16_terminal"
 ] }
 
 
-# /////////// MENUS & POPUPS ////////////
+# ////////// MENUS & POPUPS //////////
 
 "ui.menu" = { bg = "white", fg = "black" }
 "ui.menu.selected" = { bg = "black", fg = "white", modifiers = ["bold"] }
@@ -35,7 +35,7 @@ inherits = "base16_terminal"
 "ui.help" = { bg = "white", fg = "black" }
 
 
-# /////////// DIAGNOSTICS //////////
+# ////////// DIAGNOSTICS //////////
 
 "diagnostic.error" = { bg = "light-red", fg = "white", underline = { color = "white", style = "line" }, modifiers = [
   "bold",
@@ -51,7 +51,7 @@ inherits = "base16_terminal"
 ] }
 
 
-# /////////// BUFFERLINE ////////////
+# ////////// BUFFERLINE //////////
 
 "ui.bufferline.active" = { bg = "white", fg = "black", modifiers = ["bold"] }
 "ui.bufferline" = { bg = "gray", fg = "white" }

@@ -1,5 +1,10 @@
+# nb@2026.05.30
+
 {
   description = "NB macOS";
+
+
+  # ////////// INPUTS //////////
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -23,6 +28,9 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     zjstatus.url = "github:dj95/zjstatus";
   };
+
+
+  # ////////// OUTPUTS //////////
 
   outputs = { self, darwin, nixpkgs, home-manager, sops-nix, rust-overlay, determinate, nix-homebrew, zjstatus, ... }@inputs:
     let

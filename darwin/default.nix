@@ -1,3 +1,5 @@
+# nb@2026.05.30
+
 { pkgs, inputs, self, primaryUser, ... }: {
   imports = [
     ./settings.nix
@@ -8,6 +10,9 @@
     inputs.sops-nix.darwinModules.sops
   ];
 
+
+  # ////////// SECRETS & SECURITY //////////
+
   sops = {
     defaultSopsFile = ../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
@@ -17,6 +22,9 @@
   security = {
     pam.services.sudo_local.touchIdAuth = true;
   };
+
+
+  # ////////// NIX //////////
 
   nix = {
     settings = {
@@ -43,6 +51,9 @@
     enable = false;
   };
 
+
+  # ////////// NIXPKGS //////////
+
   nixpkgs = {
     config.allowUnfree = true;
     overlays = [
@@ -61,6 +72,9 @@
     ];
   };
 
+
+  # ////////// HOMEBREW //////////
+
   nix-homebrew = {
     enableRosetta = true;
     user = primaryUser;
@@ -68,6 +82,9 @@
     autoMigrate = true;
     enableFishIntegration = true;
   };
+
+
+  # ////////// HOME MANAGER //////////
 
   home-manager = {
     useGlobalPkgs = true;
@@ -83,6 +100,9 @@
       inherit inputs self primaryUser;
     };
   };
+
+
+  # ////////// SYSTEM & USER //////////
 
   system = {
     primaryUser = primaryUser;

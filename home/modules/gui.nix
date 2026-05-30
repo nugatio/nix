@@ -1,4 +1,9 @@
+# nb@2026.05.30
+
 { pkgs, lib, ... }: {
+
+  # ////////// PROGRAMS //////////
+
   programs.zellij = {
     enable = true;
     enableFishIntegration = true;
@@ -27,6 +32,9 @@
       prettier
     ];
   };
+
+
+  # ////////// CONFIG FILES //////////
 
   xdg.configFile = {
     "aerospace/aerospace.toml".source = ../configs/aerospace.toml;

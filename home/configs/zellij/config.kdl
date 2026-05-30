@@ -1,4 +1,4 @@
-// nb@2025.05.28
+// nb@2026.05.30
 
 keybinds clear-defaults=true {
 
@@ -9,7 +9,7 @@ keybinds clear-defaults=true {
     }
 
 
-    // ////////// GLOBAL SHORTCUTS (appy in all modes expect in lock mode) ///////////
+    // ////////// GLOBAL SHORTCUTS (apply in all modes except in lock mode) //////////
 
     shared_except "locked" {
 
@@ -18,7 +18,7 @@ keybinds clear-defaults=true {
         bind "Alt Super Enter" { SwitchToMode "Locked"; }
 
 
-        // :::::::::: PANE NAVIGATION :::::::::::
+        // :::::::::: PANE NAVIGATION ::::::::::
 
         bind "Alt Super c" { MoveFocus "Left"; }
         bind "Alt Super m" { MoveFocus "Up"; }
@@ -26,7 +26,7 @@ keybinds clear-defaults=true {
         bind "Alt Super t" { MoveFocus "Right"; }
 
 
-        // ::::::::::: PANE CREATION :::::::::::
+        // :::::::::: PANE CREATION ::::::::::
 
         bind "Alt Super h" { NewPane "Right"; }
         bind "Alt Super o" { NewPane "Down"; }
@@ -44,7 +44,7 @@ keybinds clear-defaults=true {
         bind "Alt Super Shift j" { PreviousSwapLayout; }
 
 
-        // ::::::::::: TAB NAVIGATION :::::::::::
+        // :::::::::: TAB NAVIGATION ::::::::::
 
         bind "Alt Super a" { GoToPreviousTab; }
         bind "Alt Super i" { GoToNextTab; }
@@ -52,7 +52,7 @@ keybinds clear-defaults=true {
         bind "Alt Super ," { ToggleTab; }
 
 
-        // ::::::::::: TAB MANAGEMENT (Break Pane) :::::::::::
+        // :::::::::: TAB MANAGEMENT (Break Pane) ::::::::::
 
         bind "Alt Super Shift a" { BreakPaneLeft; }
         bind "Alt Super Shift i" { BreakPaneRight; }
@@ -73,7 +73,7 @@ keybinds clear-defaults=true {
         bind "Alt Super 9" { GoToTab 9; }
 
 
-        // :::::::::: MODE ENTRY ::::::::::::
+        // :::::::::: MODE ENTRY ::::::::::
 
         bind "Alt Super s" { SwitchToMode "Scroll"; }
         bind "Alt Super r" { SwitchToMode "Resize"; }
@@ -83,18 +83,18 @@ keybinds clear-defaults=true {
     }
 
 
-    // /////////// EXIT STRATEGIES ////////////
+    // ////////// EXIT STRATEGIES //////////
 
     shared_except "locked" "normal" {
         bind "Esc" "Enter" { SwitchToMode "Normal"; }
     }
 
 
-    // /////////// SHARED SCROLLING & SEARCHING ////////////
+    // ////////// SHARED SCROLLING & SEARCHING //////////
 
     shared_among "scroll" "search" {
 
-        // :::::::::: SCROLL (Left Hand) :::::::::::
+        // :::::::::: SCROLL (Left Hand) ::::::::::
 
         bind "m" "Up"   { ScrollUp; }
         bind "n" "Down" { ScrollDown; }
@@ -105,11 +105,11 @@ keybinds clear-defaults=true {
     }
 
 
-    // /////////// SPECIFIC MODES ///////////
+    // ////////// SPECIFIC MODES //////////
 
     resize {
 
-        // ::::::::::: DIRECTIONAL RESIZE (Left Hand) ::::::::::
+        // :::::::::: DIRECTIONAL RESIZE (Left Hand) ::::::::::
 
         bind "c" "Left"  { Resize "Increase Left"; }
         bind "m" "Up"    { Resize "Increase Up"; }
@@ -121,14 +121,15 @@ keybinds clear-defaults=true {
         bind "T" { Resize "Decrease Right"; }
 
 
-        // :::::::::: DIRECTIONAL RESIZE (Right Hand Symmetric) :::::::::::
+        // :::::::::: DIRECTIONAL RESIZE (Right Hand Symmetric) ::::::::::
 
         bind "a" { Resize "Decrease Right"; }
         bind "\"" { Resize "Decrease Down"; }
         bind "e" { Resize "Decrease Up"; }
         bind "i" { Resize "Decrease Left"; }
 
-        // ::::::::::: GLOBAL RESIZE ::::::::::
+
+        // :::::::::: GLOBAL RESIZE ::::::::::
 
         bind "g" "." "=" "+" { Resize "Increase"; }
         bind "d" "u" "-" { Resize "Decrease"; }
@@ -157,13 +158,13 @@ keybinds clear-defaults=true {
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
 
 
-        // ::::::::: NEXT/PREV RESULT (Right Hand) :::::::::::
+        // :::::::::: NEXT/PREV RESULT (Right Hand) ::::::::::
 
         bind "e" { Search "down"; }
         bind "\"" { Search "up"; }
 
 
-        // :::::::::: SEARCH OPTIONS :::::::::::
+        // :::::::::: SEARCH OPTIONS ::::::::::
 
         bind "y" { SearchToggleOption "Wrap"; }
         bind "o" { SearchToggleOption "WholeWord"; }
@@ -176,13 +177,13 @@ keybinds clear-defaults=true {
     }
 
 
-    // /////////// SESSION MANAGER //////////
+    // ////////// SESSION MANAGER //////////
 
     session {
         bind "d" { Detach; }
         bind "q" { Quit; }
 
-        // ::::::::::: SESSION MANAGER (a / t / g / w) :::::::::::
+        // :::::::::: SESSION MANAGER (a / t / g / w) ::::::::::
 
         bind "a" "t" "l" {
             LaunchOrFocusPlugin "session-manager" {
@@ -193,7 +194,7 @@ keybinds clear-defaults=true {
         }
 
 
-        // ::::::::::: PLUGIN MANAGER (n / e / p) :::::::::::
+        // :::::::::: PLUGIN MANAGER (n / e / p) ::::::::::
 
         bind "n" "e" "p" {
             LaunchOrFocusPlugin "plugin-manager" {
@@ -217,7 +218,7 @@ keybinds clear-defaults=true {
 }
 
 
-// /////////// OTHER SETTINGS ///////////
+// ////////// OTHER SETTINGS //////////
 
 // Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect

@@ -1,6 +1,6 @@
-# nb@2025.05.28
+# nb@2026.05.30
 
-# ////////// LATEX (Tectonic + TexLab + Latexindent) ///////////
+# ////////// LATEX (Tectonic + TexLab + Latexindent) //////////
 
 [[language]]
 name = "latex"
@@ -30,7 +30,7 @@ onSave = true
 forwardSearchAfter = false
 
 
-# ////////// PYTHON (Ruff + BasedPyright) ///////////
+# ////////// PYTHON (Ruff + BasedPyright) //////////
 
 [[language]]
 name = "python"
@@ -71,7 +71,7 @@ args = ["server", "--preview"]
 organizeImports = true
 
 
-# /////////// ZIG (ZLS) ///////////
+# ////////// ZIG (ZLS) //////////
 
 [[language]]
 name = "zig"
@@ -82,7 +82,7 @@ language-servers = ["zls"]
 command = "zls"
 
 
-# /////////// RUST (Rust Analyzer) ///////////
+# ////////// RUST (Rust Analyzer) //////////
 
 [[language]]
 name = "rust"
@@ -94,7 +94,7 @@ command = "rust-analyzer"
 config.check.command = "clippy"
 
 
-# /////////// NIX (Nixd) ////////////
+# ////////// NIX (Nixd) //////////
 
 [[language]]
 name = "nix"
@@ -110,7 +110,7 @@ nixpkgs.expr = "import <nixpkgs> {}"
 formatting.command = ["nixpkgs-fmt"]
 
 
-# /////////// MARKDOWN (Markdown Oxide) ////////////
+# ////////// MARKDOWN (Markdown Oxide) //////////
 
 [[language]]
 name = "markdown"
@@ -122,7 +122,7 @@ auto-format = true
 command = "markdown-oxide"
 
 
-# /////////// R & JULIA ///////////
+# ////////// R & JULIA //////////
 
 [[language]]
 name = "r"
@@ -149,7 +149,7 @@ args = [
 timeout = 60
 
 
-# //////////// CONFIGS (TOML / YAML / JSON / HTML / CSS) ///////////
+# ////////// CONFIGS (TOML / YAML / JSON / HTML / CSS) //////////
 
 [[language]]
 name = "toml"

@@ -1,3 +1,5 @@
+# nb@2026.05.30
+
 { lib, ... }: {
   imports = lib.filter
     (path:

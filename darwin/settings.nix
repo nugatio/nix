@@ -1,8 +1,16 @@
+# nb@2026.05.30
+
 { self, pkgs, primaryUser, ... }: {
+
+  # ////////// NETWORKING //////////
+
   networking = {
     hostName = "macbookpro";
     computerName = "macbookpro";
   };
+
+
+  # ////////// SYSTEM DEFAULTS //////////
 
   system = {
     stateVersion = 6;
@@ -279,6 +287,9 @@
       };
     };
   };
+
+
+  # ////////// ACTIVATION SCRIPTS //////////
 
   system.activationScripts.postActivation.text = ''
     sudo defaults write /Library/Preferences/com.apple.BezelServices kDimTime -int 300

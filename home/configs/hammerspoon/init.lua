@@ -1,17 +1,16 @@
+-- nb@2026.05.30
+
+-- ////////// SETUP //////////
+
 -- Set animation duration to 0 for a "snappier" feel
 hs.window.animationDuration = 0
 
--- ---
--- IMPORTANT: Set the full path to your aerospace binary
--- Find this by running "which aerospace" in your terminal
--- ---
--- (It's probably /opt/homebrew/bin/aerospace or /usr/local/bin/aerospace)
+-- Full path to the aerospace binary (from "which aerospace")
 local aero = "/opt/homebrew/bin/aerospace"
 
 
---
--- === Center Window Function ===
---
+-- ////////// CENTER WINDOW //////////
+
 hs.urlevent.bind("centerWindow", function(eventName, params)
     hs.execute(aero .. " layout floating")
 
@@ -33,9 +32,8 @@ hs.urlevent.bind("centerWindow", function(eventName, params)
 end)
 
 
---
--- === Move Focused Window Function ===
---
+-- ////////// MOVE FOCUSED WINDOW //////////
+
 hs.urlevent.bind("moveWindow", function(eventName, params)
     hs.execute(aero .. " layout floating")
 

@@ -1,10 +1,18 @@
+# nb@2026.05.30
+
 { pkgs, lib, config, ... }: {
+
+  # ////////// ENVIRONMENT //////////
+
   home.sessionVariables = {
     EDITOR = "hx";
     PAGER = "moor";
     MANPAGER = "batman";
     FLAKE = "${config.home.homeDirectory}/.config/nix";
   };
+
+
+  # ////////// ALIASES //////////
 
   home.shellAliases = {
     cd = "z";
@@ -46,6 +54,9 @@
     viewtex = "latexmk -pvc -pdf";
     pdf = "open -a Preview";
   };
+
+
+  # ////////// PROGRAMS //////////
 
   programs = {
     fish = {
@@ -99,6 +110,9 @@
     btop = { enable = true; };
     gh = { enable = true; };
   };
+
+
+  # ////////// CONFIG FILES //////////
 
   xdg.configFile = {
     "starship.toml".source = ../configs/starship.toml;

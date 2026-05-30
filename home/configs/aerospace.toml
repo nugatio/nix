@@ -1,6 +1,6 @@
-# nb@2025.05.28
+# nb@2026.05.30
 
-# /////////// GENERAL SETTINGS //////////
+# ////////// GENERAL SETTINGS //////////
 
 start-at-login = true
 enable-normalization-flatten-containers = true
@@ -133,29 +133,15 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 
 
-# :::::::::: CENTERED WINDOW MODES :::::::::::
+# :::::::::: CENTERED WINDOW MODES ::::::::::
 
 alt-l = 'layout floating tiling'
 alt-x = "exec-and-forget open -g 'hammerspoon://centerWindow?width=0.7&height=1.0'"
 alt-v = "exec-and-forget open -g 'hammerspoon://centerWindow?width=0.5&height=1.0'"
 alt-z = "exec-and-forget open -g 'hammerspoon://centerWindow?width=0.5&height=0.5'"
-# alt-g = [
-#     'layout floating',
-#     'resize floating width-to 70%',i
-#     'resize floating height-to 100%',
-#     'move-floating-window horizontal-center',
-#     'move-floating-window vertical-center'
-# ]
-# alt-d = [
-#     'layout floating',
-#     'resize floating width-to 50%',
-#     'resize floating height-to 100%',
-#     'move-floating-window horizontal-center',
-#     'move-floating-window vertical-center'
-# ]
 
 
-# ::::::::::: SYSTEM ::::::::::
+# :::::::::: SYSTEM ::::::::::
 
 alt-shift-r = 'reload-config'
 
@@ -166,7 +152,7 @@ alt-q = 'macos-native-minimize'
 alt-shift-q = 'close --quit-if-last-window'
 
 
-# ////////// APP RULES ///////////
+# ////////// APP RULES //////////
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'

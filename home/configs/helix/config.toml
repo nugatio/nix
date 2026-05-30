@@ -1,4 +1,4 @@
-# nb@2025.05.28
+# nb@2026.05.30
 
 # ////////// GLOBAL CONFIGURATION //////////
 
@@ -51,7 +51,7 @@ skip-levels = 1
 
 [keys.normal]
 
-# :::::::::: NAVIGATION & MOVEMENT (Left Hand) :::::::::::
+# :::::::::: NAVIGATION & MOVEMENT (Left Hand) ::::::::::
 
 # Basic movement
 c = "move_char_left"

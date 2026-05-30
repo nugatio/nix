@@ -1,3 +1,5 @@
+# nb@2026.05.30
+
 { config, lib, pkgs, ... }:
 let
   repoPath = "${config.home.homeDirectory}/.config/nix-private";
@@ -53,6 +55,9 @@ let
   '';
 in
 {
+
+  # ////////// IMPORT PLISTS //////////
+
   home.activation.importAppPlists = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     echo "Importing application plists..."
 
@@ -72,6 +77,9 @@ in
         /usr/bin/killall cfprefsd 2>/dev/null || true
     fi
   '';
+
+
+  # ////////// SYNC-BACK AGENT //////////
 
   launchd.agents.plist-sync = {
     enable = true;

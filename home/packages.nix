@@ -1,3 +1,5 @@
+# nb@2026.05.30
+
 { pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
@@ -42,7 +44,7 @@
     micro
 
 
-    # ////////// MICS //////////
+    # ////////// MISC //////////
 
     tectonic
     uv

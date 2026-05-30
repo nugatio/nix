@@ -1,18 +1,18 @@
-# nb@2025.05.30
+# nb@2026.05.30
 
-# //////////// HELIX THEME: MODERN (Inherits Base16 Terminal) ///////////
+# ////////// HELIX THEME: MODERN (Inherits Base16 Terminal) //////////
 
 inherits = "base16_terminal"
 
 
-# /////////// STATUSLINE ///////////
+# ////////// STATUSLINE //////////
 
 "ui.statusline" = { fg = "yellow", bg = "black" }
 "ui.statusline.inactive" = { fg = "gray", bg = "black" }
 "ui.statusline.separator" = { fg = "gray", bg = "black" }
 
 
-# /////////// MODES ///////////
+# ////////// MODES //////////
 
 "ui.statusline.normal" = { bg = "light-blue", fg = "black", modifiers = [
   "bold",
@@ -25,7 +25,7 @@ inherits = "base16_terminal"
 ] }
 
 
-# /////////// MENUS & POPUPS ///////////
+# ////////// MENUS & POPUPS //////////
 
 "ui.menu" = { bg = "black", fg = "white" }
 "ui.menu.selected" = { bg = "yellow", fg = "black", modifiers = ["bold"] }
@@ -35,7 +35,7 @@ inherits = "base16_terminal"
 "ui.help" = { bg = "black", fg = "white" }
 
 
-# /////////// DIAGNOSTICS ///////////
+# ////////// DIAGNOSTICS //////////
 
 "diagnostic.error" = { underline = { color = "red", style = "curl" } }
 "diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
@@ -43,14 +43,14 @@ inherits = "base16_terminal"
 "diagnostic.hint" = { underline = { color = "green", style = "curl" } }
 
 
-# /////////// BUFFERLINE ///////////
+# ////////// BUFFERLINE //////////
 
 "ui.bufferline.active" = { fg = "yellow", bg = "black", modifiers = ["bold"] }
 "ui.bufferline" = { fg = "gray", bg = "black" }
 "ui.bufferline.background" = { bg = "black" }
 
 
-# /////////// SYNTAX ///////////
+# ////////// SYNTAX //////////
 
 "ui.selection.primary" = { bg = "#8f0086", fg = "white" }
 "operator" = { fg = "red" }
