@@ -18,8 +18,14 @@
       rust-analyzer
       ruff
       basedpyright
+      markdown-oxide
       marksman
       taplo
+      harper
+      tinymist
+      typstyle
+      bash-language-server
+      shfmt
       yaml-language-server
       vscode-langservers-extracted
       typescript-language-server
@@ -27,7 +33,6 @@
       texlivePackages.latexindent
       zls
       rPackages.languageserver
-
       nixpkgs-fmt
       prettier
     ];

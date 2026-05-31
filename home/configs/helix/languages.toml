@@ -1,6 +1,7 @@
-# nb@2026.05.30
+# nb@2026.05.31
 
-# ////////// LATEX (Tectonic + TexLab + Latexindent) //////////
+
+# ////////// LATEX (Tectonic + TexLab + Latexindent + Harper) //////////
 
 [[language]]
 name = "latex"
@@ -8,7 +9,7 @@ scope = "source.tex"
 injection-regex = "tex"
 file-types = ["tex"]
 roots = ["Tectonic.toml", ".latexmkrc", ".git"]
-language-servers = ["texlab"]
+language-servers = ["texlab", "harper-ls"]
 formatter = { command = "latexindent", args = ["-"] }
 auto-format = true
 soft-wrap = { enable = true }
@@ -29,8 +30,31 @@ args = [
 onSave = true
 forwardSearchAfter = false
 
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
 
-# ////////// PYTHON (Ruff + BasedPyright) //////////
+
+# ////////// TYPST (Tinymist + Harper) //////////
+
+[[language]]
+name = "typst"
+scope = "source.typst"
+file-types = ["typ"]
+roots = ["typst.toml", ".git"]
+language-servers = ["tinymist", "harper-ls"]
+auto-format = false
+soft-wrap = { enable = true }
+
+[language-server.tinymist]
+command = "tinymist"
+
+[language-server.tinymist.config]
+exportPdf = "never"
+formatterMode = "typstyle"
+
+
+# ////////// PYTHON (Ruff Format + BasedPyright + Ruff LSP) //////////
 
 [[language]]
 name = "python"
@@ -48,7 +72,9 @@ roots = [
 comment-token = "#"
 language-servers = ["basedpyright", "ruff"]
 indent = { tab-width = 4, unit = "    " }
+formatter = { command = "ruff", args = ["format", "--line-length", "99", "-"] }
 auto-format = true
+text-width = 99
 
 [language-server.basedpyright]
 command = "basedpyright-langserver"
@@ -61,6 +87,7 @@ diagnosticMode = "openFilesOnly"
 inlayHints.variableTypes = true
 inlayHints.callArgumentNames = true
 inlayHints.functionReturnTypes = true
+inlayHints.pytestParameters = true
 reportMissingTypeStubs = false
 
 [language-server.ruff]
@@ -69,6 +96,7 @@ args = ["server", "--preview"]
 
 [language-server.ruff.config.settings]
 organizeImports = true
+lineLength = 99
 
 
 # ////////// ZIG (ZLS) //////////
@@ -76,17 +104,19 @@ organizeImports = true
 [[language]]
 name = "zig"
 auto-format = true
+text-width = 99
 language-servers = ["zls"]
 
 [language-server.zls]
 command = "zls"
 
 
-# ////////// RUST (Rust Analyzer) //////////
+# ////////// RUST (Rust Analyzer + Rustfmt) //////////
 
 [[language]]
 name = "rust"
 auto-format = true
+text-width = 99
 language-servers = ["rust-analyzer"]
 
 [language-server.rust-analyzer]
@@ -101,6 +131,7 @@ name = "nix"
 language-servers = ["nixd"]
 formatter = { command = "nixpkgs-fmt" }
 auto-format = true
+text-width = 99
 
 [language-server.nixd]
 command = "nixd"
@@ -110,13 +141,19 @@ nixpkgs.expr = "import <nixpkgs> {}"
 formatting.command = ["nixpkgs-fmt"]
 
 
-# ////////// MARKDOWN (Markdown Oxide) //////////
+# ////////// MARKDOWN (Markdown Oxide + Harper) //////////
 
 [[language]]
 name = "markdown"
-language-servers = ["markdown-oxide"]
-formatter = { command = "prettier", args = ["--parser", "markdown"] }
+language-servers = ["markdown-oxide", "harper-ls"]
+formatter = { command = "prettier", args = [
+  "--parser",
+  "markdown",
+  "--prose-wrap",
+  "never",
+] }
 auto-format = true
+soft-wrap = { enable = true }
 
 [language-server.markdown-oxide]
 command = "markdown-oxide"
@@ -128,6 +165,7 @@ command = "markdown-oxide"
 name = "r"
 language-servers = ["r-languageserver"]
 auto-format = true
+text-width = 99
 
 [language-server.r-languageserver]
 command = "R"
@@ -136,6 +174,7 @@ args = ["--slave", "-e", "languageserver::run()"]
 [[language]]
 name = "julia"
 auto-format = true
+text-width = 99
 language-servers = ["julia"]
 
 [language-server.julia]
@@ -154,29 +193,86 @@ timeout = 60
 [[language]]
 name = "toml"
 language-servers = ["taplo"]
-formatter = { command = "taplo", args = ["fmt", "-"] }
+formatter = { command = "taplo", args = [
+  "fmt",
+  "--option",
+  "column_width=99",
+  "-",
+] }
 auto-format = true
+text-width = 99
 
 [[language]]
 name = "yaml"
 language-servers = ["yaml-language-server"]
-formatter = { command = "prettier", args = ["--parser", "yaml"] }
+formatter = { command = "prettier", args = [
+  "--parser",
+  "yaml",
+  "--print-width",
+  "99",
+] }
 auto-format = true
+text-width = 99
 
 [[language]]
 name = "json"
 language-servers = ["vscode-json-language-server"]
-formatter = { command = "prettier", args = ["--parser", "json"] }
+formatter = { command = "prettier", args = [
+  "--parser",
+  "json",
+  "--print-width",
+  "99",
+] }
 auto-format = true
+text-width = 99
 
 [[language]]
 name = "html"
 language-servers = ["vscode-html-language-server"]
-formatter = { command = "prettier", args = ["--parser", "html"] }
+formatter = { command = "prettier", args = [
+  "--parser",
+  "html",
+  "--print-width",
+  "99",
+] }
 auto-format = true
+text-width = 99
 
 [[language]]
 name = "css"
 language-servers = ["vscode-css-language-server"]
-formatter = { command = "prettier", args = ["--parser", "css"] }
+formatter = { command = "prettier", args = [
+  "--parser",
+  "css",
+  "--print-width",
+  "99",
+] }
 auto-format = true
+text-width = 99
+
+
+# ////////// SHELL (Bash + Fish) //////////
+
+[[language]]
+name = "bash"
+language-servers = ["bash-language-server"]
+formatter = { command = "shfmt", args = ["-i", "4", "-"] }
+auto-format = true
+text-width = 99
+
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
+
+[[language]]
+name = "fish"
+formatter = { command = "fish_indent" }
+auto-format = true
+text-width = 99
+
+
+# ////////// SQL //////////
+
+[[language]]
+name = "sql"
+text-width = 99
