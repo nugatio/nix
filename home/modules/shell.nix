@@ -1,6 +1,6 @@
 # nb@2026.05.30
 
-{ pkgs, lib, config, ... }: {
+{ pkgs, lib, config, inputs, ... }: {
 
   # ////////// ENVIRONMENT //////////
 
@@ -15,6 +15,7 @@
   # ////////// ALIASES //////////
 
   home.shellAliases = {
+    agy = "${inputs.antigravity-nix.packages.${pkgs.system}.google-antigravity-cli}/bin/agy";
     cd = "z";
     ".." = "cd ..";
     ls = "eza --icons --group-directories-first";

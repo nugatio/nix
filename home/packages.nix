@@ -1,6 +1,6 @@
 # nb@2026.05.30
 
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   home.packages = with pkgs; [
 
@@ -19,6 +19,7 @@
 
     # ////////// AI //////////
 
+    inputs.antigravity-nix.packages.${pkgs.system}.google-antigravity-cli
     gemini-cli
     claude-code
     (aider-chat.overrideAttrs (oldAttrs: {

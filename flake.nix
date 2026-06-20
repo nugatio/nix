@@ -27,12 +27,16 @@
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     zjstatus.url = "github:dj95/zjstatus";
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
 
   # ////////// OUTPUTS //////////
 
-  outputs = { self, darwin, nixpkgs, home-manager, sops-nix, rust-overlay, determinate, nix-homebrew, zjstatus, ... }@inputs:
+  outputs = { self, darwin, nixpkgs, home-manager, sops-nix, rust-overlay, determinate, nix-homebrew, zjstatus, antigravity-nix, ... }@inputs:
     let
       system = "aarch64-darwin";
       primaryUser = "nb";
