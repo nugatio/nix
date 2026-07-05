@@ -61,6 +61,42 @@
         zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
       })
       inputs.rust-overlay.overlays.default
+      inputs.nixpkgs-firefox-darwin.overlay
+      (final: prev: {
+        librewolf = prev.librewolf.overrideAttrs (old: {}) // {
+          override = final.lib.setFunctionArgs (args:
+            let
+              newArgs = if builtins.isFunction args then args {} else args;
+              cfg = newArgs.cfg or {};
+              policies = cfg.policies or {};
+              extraPolicies = newArgs.extraPolicies or {};
+              allPolicies = policies // extraPolicies;
+            in
+            if allPolicies == {} then
+              prev.librewolf
+            else
+              final.stdenv.mkDerivation {
+                name = (prev.librewolf.name or "librewolf") + "-wrapped";
+                buildInputs = [ prev.librewolf ];
+                passAsFile = [ "policiesJson" ];
+                policiesJson = builtins.toJSON { policies = allPolicies; };
+                buildCommand = ''
+                  mkdir -p $out/Applications
+                  cp -R ${prev.librewolf}/Applications/LibreWolf.app $out/Applications/LibreWolf.app
+                  chmod -R u+w $out/Applications/LibreWolf.app
+                  
+                  mkdir -p $out/Applications/LibreWolf.app/Contents/Resources/distribution
+                  cat $policiesJsonPath > $out/Applications/LibreWolf.app/Contents/Resources/distribution/policies.json
+                  
+                  if [ -d ${prev.librewolf}/bin ]; then
+                    mkdir -p $out/bin
+                    ln -s $out/Applications/LibreWolf.app/Contents/MacOS/librewolf $out/bin/librewolf
+                  fi
+                '';
+                meta = prev.librewolf.meta or {};
+              }) { cfg = true; extraPolicies = true; };
+        };
+      })
       (final: prev: {
         kvazaar = prev.kvazaar.overrideAttrs (oldAttrs: {
           doCheck = false;

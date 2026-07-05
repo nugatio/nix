@@ -68,12 +68,6 @@
         if command -q nix-your-shell
           nix-your-shell fish | source
         end
-        if status is-interactive
-          and not set -q ZELLIJ
-          and not set -q IN_NIX_SHELL
-          and test -t 0
-          zellij
-        end
       '';
       plugins = [ ];
     };

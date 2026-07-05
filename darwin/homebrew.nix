@@ -17,6 +17,7 @@
       "affinity"
       "aldente"
       "alt-tab"
+      "anki"
       "antigravity"
       "balenaetcher"
       "bartender"

@@ -31,12 +31,13 @@
       url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-firefox-darwin.url = "github:bandithedoge/nixpkgs-firefox-darwin";
   };
 
 
   # ////////// OUTPUTS //////////
 
-  outputs = { self, darwin, nixpkgs, home-manager, sops-nix, rust-overlay, determinate, nix-homebrew, zjstatus, antigravity-nix, ... }@inputs:
+  outputs = { self, darwin, nixpkgs, home-manager, sops-nix, rust-overlay, determinate, nix-homebrew, zjstatus, antigravity-nix, nixpkgs-firefox-darwin, ... }@inputs:
     let
       system = "aarch64-darwin";
       primaryUser = "nb";
