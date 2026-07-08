@@ -55,7 +55,6 @@
       "spotify"
       "synology-drive"
       "tailscale-app"
-      "tidal"
       "tradingview"
       "tuta-mail"
       "utm"

@@ -52,7 +52,6 @@
           "/Applications/UTM.app"
           "/Applications/Linear.app"
           "/Applications/Claude.app"
-          "/Applications/Perplexity.app"
           "/Applications/Tuta Mail.app"
           "/System/Applications/Calendar.app"
           "/System/Applications/Notes.app"
@@ -235,7 +234,10 @@
         ".GlobalPreferences" = {
           AppleHighlightColor = "1.000000 0.749020 0.823529 Pink";
           AppleICUNumberSymbols = {
-            "0" = "."; "1" = ","; "10" = "."; "17" = ",";
+            "0" = ".";
+            "1" = ",";
+            "10" = ".";
+            "17" = ",";
           };
         };
 
@@ -269,13 +271,16 @@
         };
 
         "com.apple.symbolichotkeys" = {
-          AppleSymbolicHotKeys = let
-            range = pkgs.lib.range 0 300;
-          in
-            pkgs.lib.listToAttrs (map (i: {
-              name = builtins.toString i;
-              value = { enabled = false; };
-            }) range);
+          AppleSymbolicHotKeys =
+            let
+              range = pkgs.lib.range 0 300;
+            in
+            pkgs.lib.listToAttrs (map
+              (i: {
+                name = builtins.toString i;
+                value = { enabled = false; };
+              })
+              range);
         };
       };
 
