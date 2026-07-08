@@ -85,7 +85,7 @@
 
     starship = { enable = true; enableFishIntegration = true; enableTransience = true; };
     zoxide = { enable = true; enableFishIntegration = true; };
-    atuin = { enable = true; enableFishIntegration = true; };
+    atuin = { enable = true; enableFishIntegration = true; flags = [ "--disable-ctrl-r" ]; };
     direnv = { enable = true; nix-direnv.enable = true; };
     carapace = { enable = true; enableFishIntegration = true; };
     nix-index.enable = true;
